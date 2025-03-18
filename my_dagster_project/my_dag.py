@@ -42,7 +42,7 @@ def fetch_flight_prices():
     s3 = boto3.client("s3")
     s3.put_object(Bucket=s3_bucket, Key=s3_key, Body=json.dumps(data))
     
-    print(f"✅ Saved data to s3://{s3_bucket}/{s3_key}")
+    print(f"Saved data to s3://{s3_bucket}/{s3_key}")
 
 @job
 def flight_price_collection():
