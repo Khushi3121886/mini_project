@@ -7,7 +7,7 @@ import dagster as dg  # Correctly importing Dagster with alias 'dg'
 
 
 # Function to call API and save response
-API_KEY = "fdcf5105b0mshb60125cb25ee57ep1565acjsndd740fc93e14"
+API_KEY = "ec391ec05emsh2a3999116fc9a02p1cde35jsn7bdfb82b0199"
 
 @op
 def fetch_flight_prices():
@@ -36,7 +36,7 @@ def fetch_flight_prices():
     data = response.json()
     
     # Save JSON response to S3
-    s3_bucket = "flightpriceanalysisproject"
+    s3_bucket = "flight-price-analysis-project"
     s3_key = f"flight_prices/{fetch_date}/{depart_date}.json" # New path format
     
     s3 = boto3.client("s3")
